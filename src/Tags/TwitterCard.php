@@ -2,6 +2,7 @@
 
 namespace umanskyi31\opengraph\Tags;
 
+use Da\User\AuthClient\Twitter;
 use umanskyi31\opengraph\Exceptions\OpenGraphException;
 
 class TwitterCard extends Tag
@@ -37,6 +38,48 @@ class TwitterCard extends Tag
      * @var string
      */
     protected $creator;
+
+    /**
+     * @var string
+     */
+    protected $title;
+
+    /**
+     * @var string
+     */
+    protected $description;
+
+    /**
+     * @var string
+     */
+    protected $image;
+
+    public function setTitle($title): TwitterCard{
+        $this->title = $title;
+        return $this;
+    }
+
+    public function getTitle(): string{
+        return $this->title;
+    }
+
+    public function setDescription($description): TwitterCard{
+        $this->description = $description;
+        return $this;
+    }
+
+    public function getDescription(): string{
+        return $this->description;
+    }
+
+    public function setImage($image): TwitterCard{
+        $this->image = $image;
+        return $this;
+    }
+
+    public function getImage(): string{
+        return $this->image;
+    }
 
     /**
      * @param string $site
